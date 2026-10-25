@@ -1,0 +1,35 @@
+geometry:
+  channels: 1
+  dies_per_channel: 1
+  blocks_per_die: 32
+  pages_per_block: 32
+  page_size_bytes: 4096
+  overprovision_percent: 20.0
+
+timing:
+  read_us: 50
+  program_us: 600
+  erase_us: 3500
+
+gc:
+  low_watermark_blocks: 3
+  policy: greedy
+
+wear:
+  dynamic_enabled: true
+  static_enabled: true
+  threshold: 6
+  check_interval_erases: 10
+
+persistence:
+  mode: vulnerable
+  checkpoint_interval_ops: 1000
+  checkpoint_on_flush: false
+
+debug:
+  check_every_op: false
+  check_after_gc: true
+  check_after_checkpoint: true
+
+seed: 100
+min_spare_blocks: 4

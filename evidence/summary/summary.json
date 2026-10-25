@@ -1,0 +1,42 @@
+{
+  "project": "FTL Reliability Simulator",
+  "generated_at": "2026-10-10T02:12:18Z",
+  "environment": "Ubuntu 24.04 LTS (x86_64), GCC 13.3.0, CMake 3.28.3",
+  "test_suite_status": {
+    "total_tests": 24,
+    "passed": 24,
+    "failed": 0,
+    "pass_rate_percent": 100.0
+  },
+  "thirty_fault_seeds_comparison": {
+    "seeds_evaluated": 30,
+    "workload_ops_per_seed": 100,
+    "crash_injection_window": "ops 20-80 on acknowledged writes",
+    "crash_injection_point": "CrashPoint::AfterAck",
+    "vulnerable_mode": {
+      "recovery_mode": "Vulnerable (delayed in-memory checkpointing)",
+      "total_runs": 30,
+      "crashes_injected": 30,
+      "durability_invariant_failures": 30,
+      "corruption_rate_percent": 100.0
+    },
+    "fixed_wal_mode": {
+      "recovery_mode": "WAL (per-record CRC32 write-ahead log replay)",
+      "total_runs": 30,
+      "crashes_injected": 30,
+      "durability_invariant_failures": 0,
+      "corruption_rate_percent": 0.0
+    }
+  },
+  "metrics_summary": {
+    "write_amplification_observed": 1.08,
+    "gc_cycles_tested": 20,
+    "gc_pages_relocated": 108,
+    "erase_count_distribution": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.62,
+      "stddev": 0.48
+    }
+  }
+}
